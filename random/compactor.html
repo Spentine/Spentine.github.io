@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>shrotnr</title>
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
+<script>
+function shorten() {
+	text = '"' + document.getElementById('textinput').value.replaceAll('"', '\\"').replaceAll('\n', '","') + '"'
+	document.getElementById('output').innerHTML = text
+}
+</script>
+</head>
+<body>
+<h1> hi </h1>
+<textarea type="text" id="textinput" rows="12" cols="50" value="" size=50 oninput="shorten();"></textarea>
+<p id="output" style="font-size:20px">output goes here
+</body>
+</html>

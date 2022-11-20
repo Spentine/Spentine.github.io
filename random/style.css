@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Overpass+Mono:wght@500&display=swap');
+
+body {
+    background-color: #151515;
+    padding-top: 120px;
+    padding-left: calc(30% - 80px);
+    padding-right: calc(30% - 80px);
+	font-family: 'Albert Sans';
+	color: #FFFFFF;
+    font-size: 16px;
+}
+
+p {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+h1 {
+  font-family: inherit;
+  color: inherit;
+  font-size: 32px;
+}
+f
+h2 {
+  font-family: inherit;
+  color: inherit;
+  font-size: 24px;
+  line-height: 0;
+}
+
+a {
+	color: #BBEEFF;
+}
+
+.code {
+  font-family: "Overpass Mono";
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #0d0d0d;
+  white-space: pre-wrap;
+}
+
+textarea {
+	background-color: #080808;
+	font-family: "Overpass Mono";
+	color: #FFFFFF;
+}
+
+button {
+	color: #FFFFFF;
+	background-color: #222222;
+	font-family: inherit;
+	font-size: 24px;
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	transition: all .4s;
+}
+
+button:hover {
+	transition: all .4s;
+	background-color: #333333;
+	color: #DDFFFF;
+	font-size: 28px;
+}
