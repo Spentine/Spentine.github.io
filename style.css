@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&display=swap');
+
+body {
+    background-color: #050510;
+    padding-top: 120px;
+    padding-left: calc(30% - 80px);
+    padding-right: calc(30% - 80px);
+	font-family: 'Albert Sans';
+	color: #FFFFFF;
+    font-size: 16px;
+}
+
+p {
+  font-family: inherit;
+  color: inherit;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: inherit;
+  color: inherit;
+  font-size: 32px;
+}
+
+h2 {
+  font-family: inherit;
+  color: inherit;
+  font-size: 24px;
+  line-height: 0;
+}
+
+a {
+	color: #BBEEFF;
+}
