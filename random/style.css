@@ -3,8 +3,8 @@
 body {
     background-color: #151515;
     padding-top: 120px;
-    padding-left: calc(30% - 80px);
-    padding-right: calc(30% - 80px);
+    padding-left: calc(10% - 40px);
+    padding-right: calc(10% - 40px);
 	font-family: 'Albert Sans';
 	color: #FFFFFF;
     font-size: 16px;
@@ -34,19 +34,22 @@ a {
 }
 
 .code {
-  font-family: "Overpass Mono";
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #0d0d0d;
-  white-space: pre-wrap;
+	font-family: "Overpass Mono";
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #0d0d0d;
+	white-space: pre-wrap;
 }
 
-textarea {
+.textarea, textarea {
 	background-color: #080808;
 	font-family: "Overpass Mono";
 	color: #FFFFFF;
+	font-size: 24px;
+	box-sizing: border-box;
+	white-space: pre-wrap;
 }
 
 button {
@@ -65,4 +68,35 @@ button:hover {
 	background-color: #333333;
 	color: #DDFFFF;
 	font-size: 28px;
+}
+
+.box {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+table {
+	border-collapse: collapse;
+	border-radius: 10px;
+	
+}
+
+td, th {
+  text-align: left;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #282828;
+}
+
+tr:nth-child(odd) {
+  background-color: #202020;
 }
