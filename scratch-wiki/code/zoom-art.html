@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>zoom in</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<p><a href="../index.html">go back</a></p>
+
+<h1> zoom in art </h1>
+
+<p> Code: </p>
+
+<p class="code">when gf clicked
+set [smoothing v] to (1.2) // you can change this
+set [x bounds v] to (100) // you can change this
+set [y bounds v] to (80) // you can change this
+set [zoom size v] to (200) // you can change this
+forever
+if <mouse down?> then
+set [x pos v] to ((((x pos) + (mouse x)) / (smoothing)) - (mouse x))
+set [y pos v] to((((y pos) + (mouse y)) / (smoothing)) - (mouse y))
+set [size v] to ((((size :: variables) - (zoom size)) / (smoothing)) + (zoom size)
+else
+set [x pos v] to ((x pos) / (smoothing))
+set [y pos v] to ((y pos) / (smoothing))
+set [size v] to ((((size :: variables) - (100)) / (smoothing)) + (100)
+end
+if <([abs v] of (x pos)) > (x bounds)> then
+set [x pos v] to ((<(x pos) > (0)> * ((x bounds) * (2))) - (x bounds))
+end
+if <([abs v] of (y pos)) > (y bounds)> then
+set [y pos v] to ((<(y pos) > (0)> * ((y bounds) * (2))) - (y bounds))
+end
+go to x: (x pos) y: (y pos)
+set size to (size :: variables) %</p>
+
+</body>
+</html>

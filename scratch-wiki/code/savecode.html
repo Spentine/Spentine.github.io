@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>Savecode</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<p><a href="../index.html">go back</a></p>
+
+<h1> Savecode </h1>
+
+<p> Encode a list: </p>
+
+<p class="code">define encode
+set [save code v] to ()
+set [index v] to (0)
+repeat (length of [list v])
+change [index v] by (1)
+set [char index v] to (0)
+repeat (length of (item (index) of [list v]))
+change [char index v] by (1)
+if <[/,] contains (letter (char index) of (item (index) of [list v]))? :: operators> then
+set [save code v] to (join (savecode) [/]
+end
+set [save code v] to (join (save code) (letter (char index) of (item (index) of [list v])))
+end
+set [save code v] to (join (save code) [,])
+end
+
+define decode (string)
+delete [all v] of [list v]
+set [char index v] to ()
+set [index v] to (1)
+repeat until <(index) > (length of (string))>
+if <(letter (index) of (string)) = [,]> then
+add (char index) to [list v]
+set [char index v] to ()
+else
+if <(letter (index) of (string)) = [/]> then
+change [index v] by (1)
+end
+set [char index v] to (join (char index) (letter (index) of (string)))
+end
+change [index v] by (1)
+end</p>
+
+</body>
+</html>
