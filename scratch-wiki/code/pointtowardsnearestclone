@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>Point Towards Nearest Clone</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<p><a href="../index.html">go back</a></p>
+
+<h1> Point Towards Nearest Clone </h1>
+
+<p> Code: </p>
+
+<p class="code">define Point towards nearest clone
+set [index v] to (0)
+set [closestclone v] to (0)
+set [closestdist v] to [Infinity]
+repeat (length of [Clones X v])
+change [index v] by (1)
+set [dist v] to ((((x position) - (item (index) of [Clones X v])) * ((x position) - (item (index) of [Clones X v]))) + (((y position) - (item (index) of [Clones Y v])) * ((y position) - (item (index) of [Clones Y v]))))
+if <(dist) < (closestdist)> then
+set [closestclone v] to (index)
+set [closestdist v] to (dist)
+end
+end
+point in direction (([atan v] of (((item (closestclone) of [Clones X v]) - (x position)) / ((item (closestclone) of [Clones Y v]) - (y position)))) + ((180) * <(item (closestclone) of [Clones Y v]) < (y position)>))</p>
+
+</body>
+</html>
