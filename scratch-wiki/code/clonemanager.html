@@ -59,5 +59,23 @@ replace item (cloneid) of [lastactive v] with ((1) - (item (cloneid) of [lastact
 wait (0) seconds
 end</p>
 
+<p> Alternatively, you can do this: </p>
+
+<p class="code">when gf clicked
+delete all of [activeclones v]
+
+when i start as a clone
+set [cloneid v] to (item # of (0) in [activeclones v])
+if <(cloneid) = (0)> then
+add (1) to [activeclones v]
+set [cloneid v] to (length of [activeclones v])
+else
+replace item (cloneid) of [activeclones v] with (1)
+end
+
+define delete this clone
+replace item (cloneid) of [activeclones v] with (0)
+delete this clone</p>
+
 </body>
 </html>
