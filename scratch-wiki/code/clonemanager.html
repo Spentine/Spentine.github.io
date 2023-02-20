@@ -59,6 +59,57 @@ replace item (cloneid) of [lastactive v] with ((1) - (item (cloneid) of [lastact
 wait (0) seconds
 end</p>
 
+<p> In order to get the X and Y positions of clones, you can do this </p>
+
+<p class="code">when gf clicked
+delete all of [activecloneids v]
+delete all of [lastactive v]
+delete all of [Clones X v]
+delete all of [Clones Y v]
+set [past v] to ()
+set [cloneid v] to (0)
+forever
+check clones
+wait (0) seconds
+end
+
+define check clones
+set [number of clones v] to (0)
+set [overwritepast v] to ()
+set [index v] to (0)
+repeat (length of [lastactive v])
+change [index v] by (1)
+set [overwritepast v] to (join (overwritepast) (item (index) of [lastactive v]))
+if <(item (index) of [activecloneids v]) = (1)> then
+if <(item (index) of [lastactive v]) = (letter (index) of (past))> then
+replace item (index) of [activecloneids v] with (0)
+else
+change [number of clones v] by (1)
+end
+end
+end
+set [past v] to (overwritepast)
+
+when I start as a clone
+set [cloneid v] to (item # of (0) in [activecloneids v])
+if <(cloneid) = (0)> then
+add (1) to [activecloneids v]
+add (x position) to [Clones X v]
+add (y position) to [Clones Y v]
+add (0) to [lastactive v]
+set [cloneid v] to (length of [activecloneids v])
+else
+replace item (cloneid) of [activecloneids v] with (1)
+replace item (cloneid) of [Clones X v] with (x position)
+replace item (cloneid) of [Clones Y v] with (y position)
+end
+forever
+replace item (cloneid) of [lastactive v] with ((1) - (item (cloneid) of [lastactive v]))
+replace item (cloneid) of [Clones X v] with (x position)
+replace item (cloneid) of [Clones Y v] with (y position)
+wait (0) seconds
+end</p>
+
 <p> Alternatively, you can do this: </p>
 
 <p class="code">when gf clicked
