@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>Cloud Encode</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<p><a href="../index.html">go back</a></p>
+
+<h1> Cloud Encode </h1>
+
+<p> Code: </p>
+
+<p class="code">define encode (str)
+set [index v] to (0)
+set [return v] to ()
+repeat (length of (str))
+change [index v] by (1)
+set [return v] to (join (return) (item # of (letter (index) of (str)) in [chars v] :: list))
+end
+
+define decode (num)
+set [index v] to (0)
+set [return v] to ()
+repeat ((length of (num)) / (2))
+change [index v] by (2)
+set [return v] to (join (return) (item (join (letter ((index) - (1)) of (num)) (letter (index) of (num))) of [chars v]))
+</p>
+  
+<p> Set the "chars" list to </p>
+
+<p class="code">
+
+
+
+
+
+
+
+
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+-
+_
+ </p>
+
+<p> Or you can create this script, run it, and delete it. </p>
+
+<p class="code">set [index v] to (0)
+delete all of [chars v]
+repeat (48)
+change [index v] by (1)
+add (letter (index) of [#########abcdefghijklmnopqrstuvwxyz1234567890-_ ]) to [chars v] // remember to add a space at the end
+end</p>
+
+</body>
+</html>
