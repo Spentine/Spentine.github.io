@@ -161,13 +161,13 @@ else
 if <(c) = (8)> then
 set [c8 v] to (v)
 
-define disallow (username)
+define disallow (username :: custom)
 set [index 2 v] to (0)
 repeat (8) // check if there is an empty slot
 change [index 2 v] by (1)
 get cloud variable (index 2)
 if <(return) = (0)> then // if there is an empty slot
-encode (username)
+encode (username :: custom)
 set (index 2) to (return) // take the slot
 stop [this script v]
 end
@@ -178,16 +178,16 @@ change [index v] by (1)
 get cloud variable ((index) + (1))
 set (index) to (return)
 end
-encode (username)
+encode (username :: custom)
 set [c8 v] to (return) // set yours to the 8th
 
-define is (username) valid?
+define is (username :: custom) valid?
 set [index 2 v] to (0)
 repeat (8) // loop through all cloud variables and check if none of them are yours
 change [index 2 v] by (1)
 get cloud variable (index 2)
 decode (return)
-if <(return) = (username)> then // if your username is in the cloud
+if <(return) = (username :: custom)> then // if your username is in the cloud
 set [return v] to (false) // this username is not valid
 stop [this script v]
 end
