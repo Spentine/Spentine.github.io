@@ -94,5 +94,105 @@ change [index v] by (1)
 add (letter (index) of [#########abcdefghijklmnopqrstuvwxyz1234567890-_ ]) to [chars v] // remember to add a space at the end
 end</p>
 
+<p> for voting type projects </p>
+
+<p class="code">define encode (str)
+set [index v] to (0) // encode a cloud variable
+set [return v] to ()
+repeat (length of (str))
+change [index v] by (1)
+set [return v] to (join (return) (item # of (letter (index) of (str)) in [chars v] :: list))
+end
+
+define decode (num)
+set [index v] to (0) // decode a cloud variable
+set [return v] to ()
+repeat ((length of (num)) / (2))
+change [index v] by (2)
+set [return v] to (join (return) (item (join (letter ((index) - (1)) of (num)) (letter (index) of (num))) of [chars v]))
+
+define get cloud variable (c)
+if <(c) = (1)> then // make it easier to retrieve cloud variables
+set [return v] to (c1)
+else
+if <(c) = (2)> then
+set [return v] to (c2)
+else
+if <(c) = (3)> then
+set [return v] to (c3)
+else
+if <(c) = (4)> then
+set [return v] to (c4)
+else
+if <(c) = (5)> then
+set [return v] to (c5)
+else
+if <(c) = (6)> then
+set [return v] to (c6)
+else
+if <(c) = (7)> then
+set [return v] to (c7)
+else
+if <(c) = (8)> then
+set [return v] to (c8)
+
+define set (c) to (v)
+if <(c) = (1)> then // make it easier to set cloud variables
+set [c1 v] to (v)
+else
+if <(c) = (2)> then
+set [c2 v] to (v)
+else
+if <(c) = (3)> then
+set [c3 v] to (v)
+else
+if <(c) = (4)> then
+set [c4 v] to (v)
+else
+if <(c) = (5)> then
+set [c5 v] to (v)
+else
+if <(c) = (6)> then
+set [c6 v] to (v)
+else
+if <(c) = (7)> then
+set [c7 v] to (v)
+else
+if <(c) = (8)> then
+set [c8 v] to (v)
+
+define disallow (username)
+set [index 2 v] to (0)
+repeat (8) // check if there is an empty slot
+change [index 2 v] by (1)
+get cloud variable (index 2)
+if <(return) = (0)> then // if there is an empty slot
+encode (username)
+set (index 2) to (return) // take the slot
+stop [this script v]
+end
+end
+set [index v] to (0) // there is no empty slots
+repeat (7) // push all slots down and add yours to the 8th
+change [index v] by (1)
+get cloud variable ((index) + (1))
+set (index) to (return)
+end
+encode (username)
+set [c8 v] to (return) // set yours to the 8th
+
+define is (username) valid?
+set [index 2 v] to (0)
+repeat (8) // loop through all cloud variables and check if none of them are yours
+change [index 2 v] by (1)
+get cloud variable (index 2)
+decode (return)
+if <(return) = (username)> then // if your username is in the cloud
+set [return v] to (false) // this username is not valid
+stop [this script v]
+end
+end
+set [return v] to (true) // all of the cloud variables were checked and none of them were yours</p>
+
 </body>
 </html>
