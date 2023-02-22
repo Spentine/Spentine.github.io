@@ -19,13 +19,13 @@
 <p> Code: </p>
 
 <p class="code">when gf clicked
-delete all of [activecloneids v]
-delete all of [lastactive v]
+delete all of [activecloneids v] :: list
+delete all of [lastactive v] :: list
 set [past v] to ()
 set [cloneid v] to (0)
 forever
 check clones
-wait (0) seconds
+wait (0) seconds :: control
 end
 
 define check clones
@@ -46,7 +46,7 @@ end
 set [past v] to (overwritepast)
 
 when I start as a clone
-set [cloneid v] to (item # of (0) in [activecloneids v])
+set [cloneid v] to (item # of (0) in [activecloneids v] :: list)
 if <(cloneid) = (0)> then
 add (1) to [activecloneids v]
 add (0) to [lastactive v]
@@ -56,21 +56,21 @@ replace item (cloneid) of [activecloneids v] with (1)
 end
 forever
 replace item (cloneid) of [lastactive v] with ((1) - (item (cloneid) of [lastactive v]))
-wait (0) seconds
+wait (0) seconds :: control
 end</p>
 
 <p> In order to get the X and Y positions of clones, you can do this </p>
 
 <p class="code">when gf clicked
-delete all of [activecloneids v]
-delete all of [lastactive v]
-delete all of [Clones X v]
-delete all of [Clones Y v]
+delete all of [activecloneids v] :: list
+delete all of [lastactive v] :: list
+delete all of [Clones X v] :: list
+delete all of [Clones Y v] :: list
 set [past v] to ()
 set [cloneid v] to (0)
 forever
 check clones
-wait (0) seconds
+wait (0) seconds :: control
 end
 
 define check clones
@@ -91,7 +91,7 @@ end
 set [past v] to (overwritepast)
 
 when I start as a clone
-set [cloneid v] to (item # of (0) in [activecloneids v])
+set [cloneid v] to (item # of (0) in [activecloneids v] :: list)
 if <(cloneid) = (0)> then
 add (1) to [activecloneids v]
 add (x position) to [Clones X v]
@@ -107,16 +107,16 @@ forever
 replace item (cloneid) of [lastactive v] with ((1) - (item (cloneid) of [lastactive v]))
 replace item (cloneid) of [Clones X v] with (x position)
 replace item (cloneid) of [Clones Y v] with (y position)
-wait (0) seconds
+wait (0) seconds :: control
 end</p>
 
 <p> Alternatively, you can do this: </p>
 
 <p class="code">when gf clicked
-delete all of [activeclones v]
+delete all of [activeclones v] :: list
 
 when i start as a clone
-set [cloneid v] to (item # of (0) in [activeclones v])
+set [cloneid v] to (item # of (0) in [activeclones v] :: list)
 if <(cloneid) = (0)> then
 add (1) to [activeclones v]
 set [cloneid v] to (length of [activeclones v])
