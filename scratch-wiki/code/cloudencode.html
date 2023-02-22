@@ -194,5 +194,68 @@ end
 end
 set [return v] to (true) // all of the cloud variables were checked and none of them were yours</p>
 
+<p> Save / Load from a cloud variable up to 10 rather than 8 </p>
+<p class="code">define get cloud variable (c)
+if <(c) = (1)> then // make it easier to retrieve cloud variables
+set [return v] to (c1)
+else
+if <(c) = (2)> then
+set [return v] to (c2)
+else
+if <(c) = (3)> then
+set [return v] to (c3)
+else
+if <(c) = (4)> then
+set [return v] to (c4)
+else
+if <(c) = (5)> then
+set [return v] to (c5)
+else
+if <(c) = (6)> then
+set [return v] to (c6)
+else
+if <(c) = (7)> then
+set [return v] to (c7)
+else
+if <(c) = (8)> then
+set [return v] to (c8)
+else
+if <(c) = (9)> then
+set [return v] to (c9)
+else
+if <(c) = (10)> then
+set [return v] to (c10)
+
+define set (c) to (v)
+if <(c) = (1)> then // make it easier to set cloud variables
+set [c1 v] to (v)
+else
+if <(c) = (2)> then
+set [c2 v] to (v)
+else
+if <(c) = (3)> then
+set [c3 v] to (v)
+else
+if <(c) = (4)> then
+set [c4 v] to (v)
+else
+if <(c) = (5)> then
+set [c5 v] to (v)
+else
+if <(c) = (6)> then
+set [c6 v] to (v)
+else
+if <(c) = (7)> then
+set [c7 v] to (v)
+else
+if <(c) = (8)> then
+set [c8 v] to (v)
+else
+if <(c) = (9)> then
+set [c9 v] to (v)
+else
+if <(c) = (10)> then
+set [c10 v] to (v)</p>
+
 </body>
 </html>
