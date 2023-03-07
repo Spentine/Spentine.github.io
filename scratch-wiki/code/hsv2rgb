@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>HSV to RGB</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<p><a href="../index.html">go back</a></p>
+
+<h1> Template </h1>
+
+<p> Code: </p>
+
+<p class="code">define hsl2rgb(h)(s)(l
+set[a v]to((s)*((0.5)-([abs v]of((l)-(0.5
+f(0)(h)(l
+set[return v]to((f)*(65536
+f(8)(h)(l
+change[return v]by((f)*(256
+f(4)(h)(l
+change[return v]by(f
+define f(n)(h)(l
+set[k v]to(((n)+((h)/(30)))mod(12
+set[f v]to(((((k)-(4))*&lt;(k)&lt;(4)&gt;)+(((8)-(k))*&lt;(k)&gt;(8)&gt;))+(1
+set[f v]to(round(((l)-((a)*((([abs v]of((f)+(1)))+((f)-(1)))/(2))))*(255</p>
+
+</body>
+</html>
