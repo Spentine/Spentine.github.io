@@ -128,9 +128,9 @@ define delete this clone
 replace item (cloneid) of [activeclones v] with (0)
 delete this clone</p>
   
-  <p> Starting from the alternative code, you could track the clones' X and Y positions using this code: </p>
+<p> Starting from the alternative code, you could track the clones' X and Y positions using this code: </p>
   
-  <p class="code">when gf clicked
+<p class="code"when gf clicked
 delete all of [activeclones v] :: list
 delete all of [Clones X v] :: list
 delete all of [Clones Y v] :: list
@@ -140,6 +140,8 @@ set [cloneid v] to (item # of (0) in [activeclones v] :: list)
 if <(cloneid) = (0)> then
 add (1) to [activeclones v]
 set [cloneid v] to (length of [activeclones v])
+add (x position) to [Clones X v]
+add (y position) to [CLones Y v]
 else
 replace item (cloneid) of [activeclones v] with (1)
 end
