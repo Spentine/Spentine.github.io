@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>TEMPLATE</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<p><a href="../index.html">go back</a></p>
+
+<h1> Number to hex color code </h1>
+
+<p> Code: </p>
+
+<p class="code">define convert number to hex color code(num
+set[output v]to(join(join(letter((([floor v]of((num)/(1048576)))mod(16))+(1))of[0123456789ABCDEF])(join(letter((([floor v]of((num)/(65536)))mod(16))+(1))of[0123456789ABCDEF])(letter((([floor v]of((num)/(4096)))mod(16))+(1))of[0123456789ABCDEF])))(join(letter((([floor v]of((num)/(256)))mod(16))+(1))of[0123456789ABCDEF])(join(letter((([floor v]of((num)/(16)))mod(16))+(1))of[0123456789ABCDEF])(letter((([floor v]of(num))mod(16))+(1))of[0123456789ABCDEF</p>
+
+<p> Code (1-indexed): </p>
+
+<p class="code">define convert number to hex color code(num
+set[output v]to(join(join(letter((([floor v]of(((num)-(1))/(1048576)))mod(16))+(1))of[0123456789ABCDEF])(join(letter((([floor v]of(((num)-(1))/(65536)))mod(16))+(1))of[0123456789ABCDEF])(letter((([floor v]of(((num)-(1))/(4096)))mod(16))+(1))of[0123456789ABCDEF])))(join(letter((([floor v]of(((num)-(1))/(256)))mod(16))+(1))of[0123456789ABCDEF])(join(letter((([floor v]of(((num)-(1))/(16)))mod(16))+(1))of[0123456789ABCDEF])(letter((([floor v]of((num)-(1)))mod(16))+(1))of[0123456789ABCDEF</p>
+</body>
+
+<h1> Hex color code to number </h1>
+
+<p> Code: </p>
+
+<p class="code">define hex color to number (hex)
+set[output v]to((((((((((((letter((length of(hex))-(5))of(hex))+((<[abcdef]contains(letter((length of(hex))-(5))of(hex))?>*(10))+((<[be]contains(letter((length of(hex))-(5))of(hex))?>+(<[cf]contains(letter((length of(hex))-(5))of(hex))?>*(2)))+(<[def]contains(letter((length of(hex))-(5))of(hex))?>*(3)))))*(16))+((letter((length of(hex))-(4))of(hex))+((<[abcdef]contains(letter((length of(hex))-(4))of(hex))?>*(10))+((<[be]contains(letter((length of(hex))-(4))of(hex))?>+(<[cf]contains(letter((length of(hex))-(4))of(hex))?>*(2)))+(<[def]contains(letter((length of(hex))-(4))of(hex))?>*(3))))))*(16))+((letter((length of(hex))-(3))of(hex))+((<[abcdef]contains(letter((length of(hex))-(3))of(hex))?>*(10))+((<[be]contains(letter((length of(hex))-(3))of(hex))?>+(<[cf]contains(letter((length of(hex))-(3))of(hex))?>*(2)))+(<[def]contains(letter((length of(hex))-(3))of(hex))?>*(3))))))*(16))+((letter((length of(hex))-(2))of(hex))+((<[abcdef]contains(letter((length of(hex))-(2))of(hex))?>*(10))+((<[be]contains(letter((length of(hex))-(2))of(hex))?>+(<[cf]contains(letter((length of(hex))-(2))of(hex))?>*(2)))+(<[def]contains(letter((length of(hex))-(2))of(hex))?>*(3))))))*(16))+((letter((length of(hex))-(1))of(hex))+((<[abcdef]contains(letter((length of(hex))-(1))of(hex))?>*(10))+((<[be]contains(letter((length of(hex))-(1))of(hex))?>+(<[cf]contains(letter((length of(hex))-(1))of(hex))?>*(2)))+(<[def]contains(letter((length of(hex))-(1))of(hex))?>*(3))))))*(16))+((letter(length of(hex))of(hex))+((<[abcdef]contains(letter(length of(hex))of(hex))?>*(10))+((<[be]contains(letter(length of(hex))of(hex))?>+(<[cf]contains(letter(length of(hex))of(hex))?>*(2)))+(<[def]contains(letter(length of(hex))of(hex))?>*(3</p>
+
+</body>
+</html>
