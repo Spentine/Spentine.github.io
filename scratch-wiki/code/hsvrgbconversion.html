@@ -14,6 +14,20 @@
 <body>
 <p><a href="../index.html">go back</a></p>
 
+<h1> HSV to RGB </h1>
+
+<p> Code (one line): </p>
+<p class='code'>define hsv2rgb(h)(s)(v
+set pen color to(((([floor v]of(((s)*(v))*(255)))*(round([e ^ v]of((2.772588722239781)*(letter(([floor v]of(((h)mod(360))/(60)))+(1))of(422004))))))+(([floor v]of((((s)*(v))*((1)-([abs v]of((((h)/(60))mod(2))-(1)))))*(255)))*(round([e ^ v]of((2.772588722239781)*(letter(([floor v]of(((h)mod(360))/(60)))+(1))of(240240)))))))+(([floor v]of((255)*((v)-((s)*(v)))))*(65793))</p>
+
+<h1> RGB to HSV </h1>
+  
+<p> Code (one line): </p>
+<p class='code'>define rgb2hsv(r)(g)(b
+set[h v]to(((360)*&lt;(b)&gt;(g)&gt;)+(([acos v]of(((r)-(((g)+(b))/(2)))/([sqrt v]of((((r)*((r)-((g)+(b))))+((g)*((g)-(b))))+((b)*(b))))))*((&lt;not&lt;(b)&gt;(g)&gt;&gt;*(2))-(1
+set[s v]to(((1)-(((((r)*&lt;not&lt;&lt;(r)&gt;(g)&gt;or&lt;(r)&gt;(b)&gt;&gt;&gt;)+(((g)*&lt;&lt;(g)&lt;(r)&gt;and&lt;(g)&lt;(b)&gt;&gt;)+((b)*&lt;&lt;(b)&lt;(r)&gt;and&lt;(b)&lt;(g)&gt;&gt;)))+((b)*&lt;&lt;(b)=(g)&gt;and&lt;(b)&lt;(r)&gt;&gt;))/((((r)*&lt;not&lt;&lt;(r)&lt;(g)&gt;or&lt;(r)&lt;(b)&gt;&gt;&gt;)+(((g)*&lt;&lt;(g)&gt;(r)&gt;and&lt;(g)&gt;(b)&gt;&gt;)+((b)*&lt;&lt;(b)&gt;(r)&gt;and&lt;(b)&gt;(g)&gt;&gt;)))+((b)*&lt;&lt;(b)=(g)&gt;and&lt;(b)&gt;(r)&gt;&gt;))))*&lt;((r)+((g)+(b)))&gt;(0
+set[v v]to(((((r)*&lt;not&lt;&lt;(r)&lt;(g)&gt;or&lt;(r)&lt;(b)&gt;&gt;&gt;)+(((g)*&lt;&lt;(g)&gt;(r)&gt;and&lt;(g)&gt;(b)&gt;&gt;)+((b)*&lt;&lt;(b)&gt;(r)&gt;and&lt;(b)&gt;(g)&gt;&gt;)))+((b)*&lt;&lt;(b)=(g)&gt;and&lt;(b)&gt;(r)&gt;&gt;))/(255</p>
+
 <h1> HSL to RGB </h1>
 
 <p> Code: </p>
@@ -34,14 +48,6 @@ set[f v]to(round(((l)-((a)*((([abs v]of((f)+(1)))+((f)-(1)))/(2))))*(255</p>
 <p> Code (one line): </p>
 <p class='code'>define hsl2rgb(h)(s)(l
 set pen color to(((round(((l)-(((s)*((0.5)-([abs v]of((l)-(0.5)))))*((([abs v]of(((((((h)/(30))mod(12))-(4))*&lt;(((h)/(30))mod(12))&lt;(4)&gt;)+(((8)-(((h)/(30))mod(12)))*&lt;(((h)/(30))mod(12))&gt;(8)&gt;))+(2)))+((((((h)/(30))mod(12))-(4))*&lt;(((h)/(30))mod(12))&lt;(4)&gt;)+(((8)-(((h)/(30))mod(12)))*&lt;(((h)/(30))mod(12))&gt;(8)&gt;)))/(2))))*(255)))*(65536))+(((round(((l)-(((s)*((0.5)-([abs v]of((l)-(0.5)))))*((([abs v]of(((((((8)+((h)/(30)))mod(12))-(4))*&lt;(((8)+((h)/(30)))mod(12))&lt;(4)&gt;)+(((8)-(((8)+((h)/(30)))mod(12)))*&lt;(((8)+((h)/(30)))mod(12))&gt;(8)&gt;))+(2)))+((((((8)+((h)/(30)))mod(12))-(4))*&lt;(((8)+((h)/(30)))mod(12))&lt;(4)&gt;)+(((8)-(((8)+((h)/(30)))mod(12)))*&lt;(((8)+((h)/(30)))mod(12))&gt;(8)&gt;)))/(2))))*(255)))*(256))+(round(((l)-(((s)*((0.5)-([abs v]of((l)-(0.5)))))*((([abs v]of(((((((4)+((h)/(30)))mod(12))-(4))*&lt;(((4)+((h)/(30)))mod(12))&lt;(4)&gt;)+(((8)-(((4)+((h)/(30)))mod(12)))*&lt;(((4)+((h)/(30)))mod(12))&gt;(8)&gt;))+(2)))+((((((4)+((h)/(30)))mod(12))-(4))*&lt;(((4)+((h)/(30)))mod(12))&lt;(4)&gt;)+(((8)-(((4)+((h)/(30)))mod(12)))*&lt;(((4)+((h)/(30)))mod(12))&gt;(8)&gt;)))/(2))))*(255</p>
-
-<h1> RGB to HSV </h1>
-  
-<p> Code (one line): </p>
-<p class='code'>define rgb2hsv(r)(g)(b
-set[h v]to(((360)*&lt;(b)&gt;(g)&gt;)+(([acos v]of(((r)-(((g)+(b))/(2)))/([sqrt v]of((((r)*((r)-((g)+(b))))+((g)*((g)-(b))))+((b)*(b))))))*((&lt;not&lt;(b)&gt;(g)&gt;&gt;*(2))-(1
-set[s v]to(((1)-(((((r)*&lt;not&lt;&lt;(r)&gt;(g)&gt;or&lt;(r)&gt;(b)&gt;&gt;&gt;)+(((g)*&lt;&lt;(g)&lt;(r)&gt;and&lt;(g)&lt;(b)&gt;&gt;)+((b)*&lt;&lt;(b)&lt;(r)&gt;and&lt;(b)&lt;(g)&gt;&gt;)))+((b)*&lt;&lt;(b)=(g)&gt;and&lt;(b)&lt;(r)&gt;&gt;))/((((r)*&lt;not&lt;&lt;(r)&lt;(g)&gt;or&lt;(r)&lt;(b)&gt;&gt;&gt;)+(((g)*&lt;&lt;(g)&gt;(r)&gt;and&lt;(g)&gt;(b)&gt;&gt;)+((b)*&lt;&lt;(b)&gt;(r)&gt;and&lt;(b)&gt;(g)&gt;&gt;)))+((b)*&lt;&lt;(b)=(g)&gt;and&lt;(b)&gt;(r)&gt;&gt;))))*&lt;((r)+((g)+(b)))&gt;(0
-set[v v]to(((((r)*&lt;not&lt;&lt;(r)&lt;(g)&gt;or&lt;(r)&lt;(b)&gt;&gt;&gt;)+(((g)*&lt;&lt;(g)&gt;(r)&gt;and&lt;(g)&gt;(b)&gt;&gt;)+((b)*&lt;&lt;(b)&gt;(r)&gt;and&lt;(b)&gt;(g)&gt;&gt;)))+((b)*&lt;&lt;(b)=(g)&gt;and&lt;(b)&gt;(r)&gt;&gt;))/(255</p>
   
 </body>
 </html>
