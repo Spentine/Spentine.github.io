@@ -20,6 +20,10 @@
 <p class='code'>define hsv2rgb(h)(s)(v
 set pen color to(((([floor v]of(((s)*(v))*(255)))*(round([e ^ v]of((2.772588722239781)*(letter(([floor v]of(((h)mod(360))/(60)))+(1))of(422004))))))+(([floor v]of((((s)*(v))*((1)-([abs v]of((((h)/(60))mod(2))-(1)))))*(255)))*(round([e ^ v]of((2.772588722239781)*(letter(([floor v]of(((h)mod(360))/(60)))+(1))of(240240)))))))+(([floor v]of((255)*((v)-((s)*(v)))))*(65793))</p>
 
+<p> Code (0 to 100): </p>
+<p class='code'>define hsv2rgb(h)(s)(v
+set pen color to(((([floor v]of(((s)*(v))*(0.0255)))*(round([e ^ v]of((2.772588722239781)*(letter(([floor v]of(((h)mod(100))*(0.06)))+(1))of(422004))))))+(([floor v]of((((s)*(v))*((1)-([abs v]of((((h)*(0.06))mod(2))-(1)))))*(0.0255)))*(round([e ^ v]of((2.772588722239781)*(letter(([floor v]of(((h)mod(100))*(0.06)))+(1))of(240240)))))))+(([floor v]of((2.55)*((v)-(((s)*(v))/(100)))))*(65793))</p>
+
 <h1> RGB to HSV </h1>
   
 <p> Code (one line): </p>
