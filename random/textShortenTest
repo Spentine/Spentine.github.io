@@ -1,0 +1,23 @@
+document.body.innerHTML = `<h1>Text Shorten Test</h1> <p>Enter a string, and the program will filter out all the vowels in the string except for vowels after a space or punctuation. It updates one character behind, so at the end of a text, add a space character.</p> <textarea onkeypress="small();" style="width: 80%;" rows="16" id=input></textarea><p id="output">output goes here...</p>`;
+document.head.innerHTML = `<title>textShortenTest</title> <style>body {background-color:#123; color:#eef;} p, textarea, h1, h2 {color: inherit;} textarea {background-color: #234;}</style>`;
+
+function filter(x) {
+	if (x === "") {return ""}
+	const exclusion = "aeiouAEIOU";
+  const punct = " [({";
+  n = x[0];
+  for (i=1; i<x.length; i++) {
+  	if (punct.includes(x[i]) && i !== x.length-1) {
+    	n += x[i] + x[i+1];
+      i++;
+    } else if (!exclusion.includes(x[i])) {
+    	n += x[i];
+    }
+  }
+  return n;
+}
+
+function small() {
+	const x = document.getElementById("input").value;
+	document.getElementById("output").innerHTML = filter(x);
+}
