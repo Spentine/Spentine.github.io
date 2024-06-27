@@ -1,34 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&display=swap');
-
-body {
-    background-color: #050510;
-    padding-top: 120px;
-    padding-left: calc(30% - 80px);
-    padding-right: calc(30% - 80px);
-	font-family: 'Albert Sans';
-	color: #FFFFFF;
-    font-size: 16px;
+@font-face {
+  font-family: "Bloxyl";
+  src:
+    local("Bloxyl"),
+    url("assets/Bloxyl.otf");
 }
 
-p {
+body {
+  background-color: #101012;
+  
+  padding-top: 60px;
+  padding-left: calc(24px);
+  padding-right: calc(24px);
+  
+  display: flex;
+  justify-content: center;
+  
+	font-family: 'Bloxyl';
+	color: #FFFFFF;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+hr {
+  border-color: #404050;
+  background-color: #404050;
+  height: 2px;
+  border: 0;
+  margin: 24px 0px;
+}
+
+.container {
+  width: 1024px;
+}
+
+p, li {
   font-family: inherit;
   color: inherit;
-  font-size: 16px;
+  font-weight: normal;
+  font-size: 18px;
+  
+  text-align: justify;
+  letter-spacing: 0.5px;
 }
 
 h1 {
   font-family: inherit;
   color: inherit;
+  font-weight: normal;
   font-size: 32px;
 }
 
 h2 {
   font-family: inherit;
   color: inherit;
+  font-weight: normal;
   font-size: 24px;
   line-height: 0;
 }
 
 a {
 	color: #BBEEFF;
+}
+
+.centered {
+  text-align: center;
 }
