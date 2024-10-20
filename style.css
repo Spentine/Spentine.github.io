@@ -12,9 +12,6 @@ body {
   padding-left: calc(24px);
   padding-right: calc(24px);
   
-  display: flex;
-  justify-content: center;
-  
 	font-family: 'Bloxyl';
 	color: #FFFFFF;
   font-size: 18px;
@@ -29,10 +26,6 @@ hr {
   margin: 24px 0px;
 }
 
-.container {
-  width: 1024px;
-}
-
 p, li {
   font-family: inherit;
   color: inherit;
@@ -40,7 +33,6 @@ p, li {
   font-size: 18px;
   
   text-align: justify;
-  letter-spacing: 0.5px;
 }
 
 h1 {
@@ -58,10 +50,27 @@ h2 {
   line-height: 0;
 }
 
+h3 {
+  font-family: inherit;
+  color: inherit;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 0;
+}
+
 a {
 	color: #BBEEFF;
 }
 
 .centered {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 768px;
+}
+
+.centeredText {
   text-align: center;
 }
